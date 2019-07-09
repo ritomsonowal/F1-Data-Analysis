@@ -21,3 +21,5 @@ But in recent years (2010-present), overall classified finishes have made drasti
 <img src="screenshots/1950-1980.png" width="270px"/> <img src="screenshots/1980-2010.png" width="270px"/> <img src="screenshots/Present_Generation.png" width="270px"/>
 
 While in the early years of F1, retirements due to engine failures were dominant, now majority of retirements in races stem from car failures due to on track collisions during the race.
+
+Also, if you were a driver during the period 1950-2010 you were more likely to not finish the race than completing the race. 
