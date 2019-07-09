@@ -16,4 +16,8 @@ As the plot speaks for it itself, DNFs due to mechanical issues like Engine, Gea
 
 There has also been a sharp increase in the number of DNFs due to car failure following a collision on track during 1980-2010 as opposed to the previous years.
 
-But in recent years (2010-present), overall classified finishes have made significant improvement with a decrease in the number of DNFs.
+But in recent years (2010-present), overall classified finishes have made drastic improvement with a decrease in the number of DNFs.
+
+<img src="screenshots/1950-1980.png" width="270px"/> <img src="screenshots/1980-2010.png" width="270px"/> <img src="screenshots/Present_Generation.png" width="270px"/>
+
+While in the early years of F1, retirements due to engine failures were dominant, now majority of retirements in races stem from car failures due to on track collisions during the race.
