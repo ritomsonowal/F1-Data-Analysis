@@ -35,7 +35,7 @@ section3 = {}
 for index, row in df_inner.iterrows():
     status_id = row['S-ID']
     year = row['Year']
-    if status_id in [11,12,13,14,15,16,17,18]:
+    if status_id in [11, 12, 13, 14, 15, 16, 17, 18]:
         continue
     if year >= 1950 and year < 1980:
         if status_id not in section1.keys():
@@ -57,11 +57,22 @@ for index, row in df_inner.iterrows():
 x = []
 y = [[] for _ in range(3)]
 
-for i in range(1,137):
-    if i in df_status['S-ID'] and i in section1.keys() and i in section2.keys() and i in section3.keys() and (section1[i]+section2[i]+section3[i] > 150):
+max1 = 2
+max2 = 2
+max3 = 2
+
+for i in range(1, 137):
+    if i != 1 and i in section1.keys() and section1[max1] < section1[i]:
+        max1 = i
+    if i != 1 and i in section2.keys() and section2[max1] < section2[i]:
+        max2 = i
+    if i != 1 and i in section3.keys() and section3[max1] < section3[i]:
+        max3 = i
+    if i in df_status['S-ID'] and i in section1.keys() and i in section2.keys() and i in section3.keys() and (section1[i] + section2[i] + section3[i] > 150):
         x.append(df_status.at[i, 'Status'])
         if i in section1.keys():
             y[0].append(section1[i])
+
         else:
             y[0].append(0)
         if i in section2.keys():
@@ -73,11 +84,9 @@ for i in range(1,137):
         else:
             y[2].append(0)
 
-# print(section1)
-# print(section2)
 
 # create plot
-fig, ax = plt.subplots()
+plt.figure('No. of Instances vs Status')
 index = np.arange(len(y[0]))
 bar_width = 0.15
 opacity = 0.8
@@ -104,6 +113,70 @@ plt.xticks(index + bar_width, tuple(x))
 plt.legend()
 
 plt.tight_layout()
-plt.show()
-#
 # plt.show()
+
+# Pie chart
+max_dnfs = df_status.at[max1, 'Status'] + ' DNFs'
+total = sum(section1.values())
+labels = ['Classified Finishes', max_dnfs, 'Other DNFs']
+sizes = [section1[1], section1[max1], total - section1[1] - section1[max1]]
+# colors
+# colors = ['#ff9999','#66b3ff','#99ff99','#ffcc99']
+colors = ['#ff9999', '#66b3ff', '#99ff99']
+# explsion
+explode = (0.05, 0.05, 0.05)
+
+plt.figure('1950-1980')
+plt.pie(sizes, colors=colors, labels=labels, autopct='%1.1f%%',
+        startangle=90, pctdistance=0.85, explode=explode)
+# draw circle
+centre_circle = plt.Circle((0, 0), 0.70, fc='white')
+fig = plt.gcf()
+fig.gca().add_artist(centre_circle)
+# Equal aspect ratio ensures that pie is drawn as a circle
+plt.title('Race Results 1950-1980')
+plt.tight_layout()
+
+max_dnfs = df_status.at[max2, 'Status'] + ' DNFs'
+total = sum(section2.values())
+labels = ['Classified Finishes', max_dnfs, 'Other DNFs']
+sizes = [section2[1], section2[max2], total - section2[1] - section2[max2]]
+# colors
+# colors = ['#ff9999','#66b3ff','#99ff99','#ffcc99']
+colors = ['#ff9999', '#66b3ff', '#99ff99']
+# explsion
+explode = (0.05, 0.05, 0.05)
+
+plt.figure('1980-2010')
+plt.pie(sizes, colors=colors, labels=labels, autopct='%1.1f%%',
+        startangle=90, pctdistance=0.85, explode=explode)
+# draw circle
+centre_circle = plt.Circle((0, 0), 0.70, fc='white')
+fig = plt.gcf()
+fig.gca().add_artist(centre_circle)
+# Equal aspect ratio ensures that pie is drawn as a circle
+plt.title('Race Results 1980-2010')
+plt.tight_layout()
+
+max_dnfs = df_status.at[max3, 'Status'] + ' DNFs'
+total = sum(section3.values())
+labels = ['Classified Finishes', max_dnfs, 'Other DNFs']
+sizes = [section3[1], section3[max3], total - section3[1] - section3[max3]]
+# colors
+# colors = ['#ff9999','#66b3ff','#99ff99','#ffcc99']
+colors = ['#ff9999', '#66b3ff', '#99ff99']
+# explsion
+explode = (0.05, 0.05, 0.05)
+
+plt.figure('Present Generation')
+plt.pie(sizes, colors=colors, labels=labels, autopct='%1.1f%%',
+        startangle=90, pctdistance=0.85, explode=explode)
+# draw circle
+centre_circle = plt.Circle((0, 0), 0.70, fc='white')
+fig = plt.gcf()
+fig.gca().add_artist(centre_circle)
+# Equal aspect ratio ensures that pie is drawn as a circle
+plt.title('Race Results 2010-present')
+plt.tight_layout()
+
+plt.show()
