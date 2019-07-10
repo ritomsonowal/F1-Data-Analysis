@@ -179,4 +179,6 @@ fig.gca().add_artist(centre_circle)
 plt.title('Race Results 2010-present')
 plt.tight_layout()
 
+
+
 plt.show()
