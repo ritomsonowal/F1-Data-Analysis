@@ -8,13 +8,15 @@ The dataset is fully updated to the last Austrian Grand Prix, 2019.
 ***
 
 ##### Table of Contents  
-*[How DNF Trends have Evolved over a Period of 69 Years](#dnf)  
-*[Is Max Verstappen on the road to becoming the Greatest Ever?](#ver)  
+* [How DNF Trends have Evolved over a Period of 69 Years](#dnf)  
+* [Is Max Verstappen on the road to becoming the Greatest Ever?](#ver)  
 
 ***
 
-<a name="dnf"/>
+<div id="dnf">
+  
 # How DNF Trends have Evolved over a Period of 69 Years
+
 
 Logically speaking, DNFs are expected to decrease as the human understanding of machines and technology advances while the number of classified finsihes are expected to increase. 
 
@@ -33,8 +35,12 @@ While in the early years of F1, retirements due to engine failures were dominant
 
 Also, if you were a driver during the period 1950-2010 you were more likely to not finish the race than completing the race. 
 
+</div>
+
 ***
-<a name="ver"/>
+
+<div id="ver">
+
 # Is Max Verstappen on the road to becoming the Greatest Ever?
 
 **Michael Schumacher** is one of the greatest drivers in F1 without a doubt (possibly is the greatest).
@@ -60,3 +66,5 @@ So, the short answer?
 **_Yes. Definitely yes._**
 
 He started his F1 career really strong and still has a lot of years into his career. It would be really interesting to see how he develops over the years and given a competitive car, we may even witness the _Youngest F1 World Champion_ ever. 
+
+</div>
