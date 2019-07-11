@@ -7,7 +7,7 @@ The dataset is fully updated to the last Austrian Grand Prix, 2019.
 
 ***
 
-##### Table of Contents  
+# Table of Contents  
 * [How DNF Trends have Evolved over a Period of 69 Years](#dnf)  
 * [Is Max Verstappen on the road to becoming the Greatest Ever?](#ver)  
 
