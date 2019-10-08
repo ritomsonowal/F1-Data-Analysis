@@ -87,7 +87,7 @@ def createRadar2(driver, data, driver2, data2):
     plt.show()
 
 # clean drivers csv
-df_drivers = pandas.read_csv('csv_files/drivers.csv',
+df_drivers = pandas.read_csv('csv_files/driver.csv',
                              names=['D_ID', 'Alias', 'Number', 'Code', 'Forename', 'Surname', 'DOB', 'Nationality', 'URL'])
 
 # df_drivers = df_drivers.set_index("D_ID", drop=False)
